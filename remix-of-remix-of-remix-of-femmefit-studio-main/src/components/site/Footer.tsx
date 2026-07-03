@@ -74,7 +74,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display text-lg tracking-wider mb-4">Contact</h4>
+            <h4 className="font-display text-lg tracking-wider mb-4">Contacts</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>Platinum Plaza, Soan Garden</li>
               <li>{WHATSAPP_DISPLAY}</li>
