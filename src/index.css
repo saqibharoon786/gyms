@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Runners — dark luxury + neon green design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Core palette */
+    --background: 120 33% 3%;            /* #050a05 deep black-green */
+    --foreground: 0 0% 98%;
+
+    --card: 120 25% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 120 30% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 105 70% 45%;              /* duller parrot green */
+    --primary-foreground: 120 33% 3%;
+
+    --secondary: 110 60% 16%;            /* duller dark parrot green */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 110 15% 10%;
+    --muted-foreground: 110 8% 65%;
+
+    --accent: 105 70% 45%;
+    --accent-foreground: 120 33% 3%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 110 30% 14%;
+    --input: 110 20% 10%;
+    --ring: 105 90% 50%;
+
+    --radius: 0.75rem;
+
+    /* Brand tokens */
+    --neon: 105 70% 45%;                 /* duller parrot green */
+    --neon-soft: 100 70% 55%;
+    --deep-green: 110 60% 16%;           /* duller dark parrot green */
+    --jet: 120 33% 3%;
+    --jet-2: 120 25% 6%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--jet)) 0%, hsl(110 60% 8%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon)) 0%, hsl(95 65% 50%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(120 25% 7% / 0.9) 0%, hsl(110 40% 8% / 0.6) 100%);
+    --gradient-radial-glow: radial-gradient(circle at 50% 50%, hsl(var(--neon) / 0.18), transparent 60%);
+
+    --shadow-neon: 0 0 16px hsl(var(--neon) / 0.25), 0 0 32px hsl(var(--neon) / 0.12);
+    --shadow-neon-sm: 0 0 8px hsl(var(--neon) / 0.25);
+    --shadow-card: 0 20px 50px -20px hsl(0 0% 0% / 0.8), 0 0 0 1px hsl(var(--neon) / 0.05);
+    --shadow-elevated: 0 30px 80px -20px hsl(0 0% 0% / 0.9);
+
+    --transition-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .dark {
+    --background: 120 33% 3%;
+    --foreground: 0 0% 98%;
+    --card: 120 25% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 120 30% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 105 70% 45%;
+    --primary-foreground: 120 33% 3%;
+    --secondary: 110 60% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 110 15% 10%;
+    --muted-foreground: 110 8% 65%;
+    --accent: 105 70% 45%;
+    --accent-foreground: 120 33% 3%;
+    --border: 110 30% 14%;
+    --input: 110 20% 10%;
+    --ring: 105 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse at top, hsl(110 60% 6%) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom right, hsl(105 90% 8% / 0.4) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .font-serif-elegant { font-family: 'Playfair Display', serif; }
+  .font-body { font-family: 'DM Sans', sans-serif; }
+}
+
+@layer utilities {
+  .text-neon { color: hsl(var(--neon)); }
+  .bg-neon { background-color: hsl(var(--neon)); }
+  .border-neon { border-color: hsl(var(--neon)); }
+
+  .text-glow {
+    text-shadow: 0 0 8px hsl(var(--neon) / 0.4), 0 0 18px hsl(var(--neon) / 0.15);
+  }
+  .text-glow-soft {
+    text-shadow: 0 0 6px hsl(var(--neon) / 0.3);
+  }
+
+  .neon-glow { box-shadow: var(--shadow-neon); }
+  .neon-glow-sm { box-shadow: var(--shadow-neon-sm); }
+
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--neon) / 0.12);
+    box-shadow: var(--shadow-card);
+  }
+
+  .gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .text-gradient-neon {
+    background: linear-gradient(135deg, hsl(var(--neon)), hsl(95 65% 55%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--neon) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon) / 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hover-lift {
+    transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -20px hsl(var(--neon) / 0.12), var(--shadow-card);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s var(--transition-smooth), transform 0.9s var(--transition-smooth);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
