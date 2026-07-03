@@ -85,7 +85,7 @@ export const Footer = () => {
         </div>
 
         <div className="pt-6 border-t border-border flex flex-col md:flex-row gap-3 items-center justify-between text-xs text-muted-foreground">
-          <p>© 2025 The Runners. All Rights Reserved.</p>
+          <p>© 2026 The Runners. All Rights Reserved.</p>
           <p className="font-serif-elegant italic">Strength looks beautiful on you.</p>
         </div>
       </div>
