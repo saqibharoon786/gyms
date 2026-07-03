@@ -12,7 +12,7 @@ export const ServicesSection = () => {
             Services that <span className="text-gradient-neon">empower</span>
           </h2>
           <p className="text-muted-foreground">
-            Everything a modern woman needs to feel her strongest, calmest, most radiant self.
+            Everything a modern woman needs to feel her strongest, calmest and most radiant self.
           </p>
         </div>
 
