@@ -19,7 +19,7 @@ export const Footer = () => {
               </div>
             </a>
             <p className="font-serif-elegant italic text-muted-foreground max-w-md">
-              Pakistan's first premium ladies-only gym. A space where women rise.
+              Pakistan's first premium ladies-only gym. A space where womens rise.
             </p>
             <div className="flex gap-3 mt-6">
               <a
